@@ -13,13 +13,14 @@ export default class Stat {
     this.location = p.createVector(x, y);
   }
 
-  update(velocity: p5.Vector): void {
-    this.location.add(velocity);
+  update(location: p5.Vector): void {
+    this.location.set(location);
   }
 
   display(): void {
     this.p.fill('white');
     this.p.textSize(40);
+    this.p.textWidth(400);
     this.p.textAlign('center');
     this.p.text(
       this.attribute,
@@ -31,6 +32,5 @@ export default class Stat {
       this.location.x + this.p.width / 2,
       this.location.y + this.p.height / 2 + 100
     );
-    console.log(this.value);
   }
 }

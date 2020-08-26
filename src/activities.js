@@ -1,9 +1,9 @@
 export default {
+  activityType: 'RUNNING',
   summaryId: '5334116482',
   durationInSeconds: 6083,
   startTimeInSeconds: 1596544339,
   startTimeOffsetInSeconds: 25200,
-  activityType: 'RUNNING',
   averageHeartRateInBeatsPerMinute: 163,
   averageRunCadenceInStepsPerMinute: 124.625,
   averageSpeedInMetersPerSecond: 0.59,

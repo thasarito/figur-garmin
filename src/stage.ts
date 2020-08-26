@@ -10,9 +10,9 @@ export default class Stage {
     this.location = p.createVector(x, y);
   }
 
-  update(velocity: p5.Vector): void {
-    this.location.add(velocity.x, velocity.y);
-    this.stats.forEach((stat) => stat.update(velocity));
+  update(location: p5.Vector): void {
+    this.location.set(location);
+    this.stats.forEach((stat) => stat.update(location));
   }
 
   addStat(attribute: string, value: string | number): void {
