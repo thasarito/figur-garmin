@@ -28,7 +28,7 @@ function sketch(p) {
       t = (p.frameCount % (60 * second)) / (60 * second),
       x = easeInOutElastic(t) * -p.width - n * p.width;
 
-    if (t === 0) {
+    if (p.frameCount % (60 * second) === 299) {
       n++;
     }
 
