@@ -1,5 +1,7 @@
 import p5 from 'p5';
 
+import palette from 'nice-color-palettes';
+
 import activities from './activities';
 import Stage from './stage';
 import easeInOutElastic from './easeInQuad';
@@ -7,12 +9,14 @@ import easeInOutElastic from './easeInQuad';
 function sketch(p) {
   let stages = [];
   let n = 0;
+  const colors = palette.flat();
 
   p.setup = function () {
     p.createCanvas(600, 600);
 
     Object.entries(activities).forEach(([attribute, value], i) => {
-      const stage = new Stage(p, i * p.width, 0, '#dd5034');
+      const bg = colors[i];
+      const stage = new Stage(p, i * p.width, 0, bg);
       stage.addStat(attribute, value);
       stages.push(stage);
     });
@@ -23,7 +27,6 @@ function sketch(p) {
     const second = 5,
       t = (p.frameCount % (60 * second)) / (60 * second),
       x = easeInOutElastic(t) * -p.width - n * p.width;
-    console.log(t);
 
     if (t === 0) {
       n++;

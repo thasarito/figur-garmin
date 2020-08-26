@@ -20,7 +20,6 @@ export default class Stat {
   display(): void {
     this.p.fill('white');
     this.p.textSize(40);
-    this.p.textWidth(400);
     this.p.textAlign('center');
     this.p.text(
       this.attribute,
