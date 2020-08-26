@@ -10,6 +10,7 @@ function sketch(p) {
     p.createCanvas(600, 600);
 
     mainStage = new Stage(p, 0, 0, '#dd5034');
+    mainStage.addStat('step', activities['steps']);
     rightStage = new Stage(p, 600, 0, '#24235d');
   };
 
